@@ -1,8 +1,8 @@
-from Model import train_model
-
+from Model import train_model, test_trained_model
 
 def main():
-    train_model('./data/dataset.xls', 50)
+    train_model('./data/dataset.xls', 10)
+    #test_trained_model(10)
 
 if __name__ == '__main__':
     main()
