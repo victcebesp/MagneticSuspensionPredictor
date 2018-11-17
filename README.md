@@ -1,6 +1,6 @@
-#Magnetic Suspension Control System
+# Magnetic Suspension Control System
 
-###Introducción
+### Introducción
 El problema a solucionar que elegimos fue el de la Identificación o control de un Sistema de Suspensión Magnética. El objetivo principal de la práctica es crear una red neuronal supervisada de tipo backpropagation que tras el entrenamiento, sea capaz de reproducir el comportamiento que tiene un imán en suspensión cuya distancia a un electroimán va cambiando según se le va aplicando diferentes intensidades al electroimán. Dicho comportamiento puede ser representado mediante la siguiente ecuación diferencial:
 
 <p align="center">
@@ -43,17 +43,17 @@ Cabe destacar que todos los datos son normalizados, de tal manera que sus valore
 Para llevar a cabo todas estas acciones, se ha decido crear una clase llamada DatasetManager. 
 
 
-###Arquitectura de la red
+### Arquitectura de la red
 La red está formada por 5 capas entre las cuales encontramos la capa de entrada, la capa de salida y tres capas ocultas con 20 neuronas cada una. En todas las neuronas de las capas ocultas, se utiliza una función de activación relu. En la capa de salida por lo contrario, se utiliza una función de activación sigmoid para que las salidas de la red estén entre 0 y 1 y así poder hacer correctamente los cálculos de errores con las salidas normalizadas en la fase de preprocesamiento. Cabe destacar que el método que genera la arquitectura de la red, tiene en cuenta el parámetro introducido por el usuario para el indicar el tamaño del intervalo del histórico, de forma que automáticamente, se genera la red con el número de neuronas en la capa de entrada correctas.
 
 La función de coste es la función error cuadrático medio. Además, para optimizar el backpropagation, se utiliza el algoritmo Adam (https://arxiv.org/abs/1412.6980v8) con un learning rate de 0.001.
 
-###Entrenamiento
+### Entrenamiento
 Para llevar a cabo el entrenamiento de la red, se ha decidido elegir un tamaño de batch de 32. Con eso, aparte de añadir un poco de ruido para evitar que la red caiga en un mínimo local, consigue mejorar el tiempo de convergencia. Adicionalmente, se ha escogido un número de épocas de 600, de tal manera que se entrenará la red pasando en total 600 veces por el conjunto de datos.
 
 A lo largo del entrenamiento, se utiliza un conjunto de datos para en cada iteración, evaluar el rendimiento de la red, de tal manera que al finalizar dicho entrenamiento, se construye una gráfica con el error en cada una de las iteraciones.
 
-###Resultados
+### Resultados
 Tras haber llevado a cabo el entrenamiento de la red neuronal, hemos decido mostrar dos gráficas mediante las cuales podemos ver el resultado final conseguido. Por un lado se puede observar la gráfica del error.
 Como se puede observar, rápidamente la gráfica converge pasando de más de un 60% de error a entre un 3.5% y 4%. Cabe resaltar el ruido que se observa en el error. Este ruido como ya ha sido comentado anteriormente, viene aparece por el tamaño del batch y la componente estocástica del algoritmos de optimización del backpropagation Adam.
 
