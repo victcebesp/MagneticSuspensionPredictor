@@ -16,7 +16,7 @@ El problema a solucionar que elegimos fue el de la Identificación o control de 
     <img width="315" alt="captura de pantalla 2018-11-17 a las 11 02 06" src="https://user-images.githubusercontent.com/15388747/48664451-91fbea80-ea96-11e8-8ee1-b6204982bb38.png">
 </p>
 
-Tanto para generar la red, como para entrenarla y hacer las predicciones post-entrenamiento, hemos usado un framework de Python llamado Keras (https://keras.io). Se trata de un framework de alto nivel escrito en python que es capaz de ejecutarse por encima de Tensorflow o Theano entre otros.
+Tanto para generar la red, como para entrenarla y hacer las predicciones post-entrenamiento, hemos usado un framework de Python llamado [Keras](https://keras.io). Se trata de un framework de alto nivel escrito en python que es capaz de ejecutarse por encima de Tensorflow o Theano entre otros.
 
 
 
@@ -46,7 +46,7 @@ Para llevar a cabo todas estas acciones, se ha decido crear una clase llamada Da
 ### Arquitectura de la red
 La red está formada por 5 capas entre las cuales encontramos la capa de entrada, la capa de salida y tres capas ocultas con 20 neuronas cada una. En todas las neuronas de las capas ocultas, se utiliza una función de activación relu. En la capa de salida por lo contrario, se utiliza una función de activación sigmoid para que las salidas de la red estén entre 0 y 1 y así poder hacer correctamente los cálculos de errores con las salidas normalizadas en la fase de preprocesamiento. Cabe destacar que el método que genera la arquitectura de la red, tiene en cuenta el parámetro introducido por el usuario para el indicar el tamaño del intervalo del histórico, de forma que automáticamente, se genera la red con el número de neuronas en la capa de entrada correctas.
 
-La función de coste es la función error cuadrático medio. Además, para optimizar el backpropagation, se utiliza el algoritmo Adam (https://arxiv.org/abs/1412.6980v8) con un learning rate de 0.001.
+La función de coste es la función error cuadrático medio. Además, para optimizar el backpropagation, se utiliza el algoritmo [Adam](https://arxiv.org/abs/1412.6980v8) con un learning rate de 0.001.
 
 ### Entrenamiento
 Para llevar a cabo el entrenamiento de la red, se ha decidido elegir un tamaño de batch de 32. Con eso, aparte de añadir un poco de ruido para evitar que la red caiga en un mínimo local, consigue mejorar el tiempo de convergencia. Adicionalmente, se ha escogido un número de épocas de 600, de tal manera que se entrenará la red pasando en total 600 veces por el conjunto de datos.
