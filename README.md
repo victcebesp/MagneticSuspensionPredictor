@@ -3,7 +3,7 @@
 ###Introducción
 El problema a solucionar que elegimos fue el de la Identificación o control de un Sistema de Suspensión Magnética. El objetivo principal de la práctica es crear una red neuronal supervisada de tipo backpropagation que tras el entrenamiento, sea capaz de reproducir el comportamiento que tiene un imán en suspensión cuya distancia a un electroimán va cambiando según se le va aplicando diferentes intensidades al electroimán. Dicho comportamiento puede ser representado mediante la siguiente ecuación diferencial:
 
-<img style="margin:0 auto" width="413" alt="captura de pantalla 2018-11-17 a las 10 59 04" src="https://user-images.githubusercontent.com/15388747/48664428-5cef9800-ea96-11e8-886a-c9ab4d1d0bc6.png">
+<img style="margin:0 auto;" width="413" alt="captura de pantalla 2018-11-17 a las 10 59 04" src="https://user-images.githubusercontent.com/15388747/48664428-5cef9800-ea96-11e8-886a-c9ab4d1d0bc6.png">
 
 - Donde M es la masa del imán en suspensión.
 - g es la constante de la gravedad.
