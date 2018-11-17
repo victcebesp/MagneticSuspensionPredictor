@@ -12,7 +12,9 @@ El problema a solucionar que elegimos fue el de la Identificación o control de 
 - ß es el coeficiente de fricción del material donde se mueve el cuerpo magnético en suspensión.
 - α es la fuerza del campo que produce el cuerpo electromagnético.
 
-<img width="315" alt="captura de pantalla 2018-11-17 a las 11 02 06" src="https://user-images.githubusercontent.com/15388747/48664451-91fbea80-ea96-11e8-8ee1-b6204982bb38.png">
+<p align="center">
+    <img width="315" alt="captura de pantalla 2018-11-17 a las 11 02 06" src="https://user-images.githubusercontent.com/15388747/48664451-91fbea80-ea96-11e8-8ee1-b6204982bb38.png">
+</p>
 
 Tanto para generar la red, como para entrenarla y hacer las predicciones post-entrenamiento, hemos usado un framework de Python llamado Keras (https://keras.io). Se trata de un framework de alto nivel escrito en python que es capaz de ejecutarse por encima de Tensorflow o Theano entre otros.
 
@@ -34,7 +36,9 @@ Como se puede observar, además de añadir tanto los intervalos de intensidades 
 
 Cabe destacar que todos los datos son normalizados, de tal manera que sus valores se encuentran entre 0 y 1. Esto se realiza aplicando la siguiente ecuación:
 
-<img width="521" alt="captura de pantalla 2018-11-17 a las 18 28 59" src="https://user-images.githubusercontent.com/15388747/48664463-ab049b80-ea96-11e8-82e5-ecff81e998d6.png">
+<p align="center">
+    <img width="521" alt="captura de pantalla 2018-11-17 a las 18 28 59" src="https://user-images.githubusercontent.com/15388747/48664463-ab049b80-ea96-11e8-82e5-ecff81e998d6.png">
+</p>
 
 Para llevar a cabo todas estas acciones, se ha decido crear una clase llamada DatasetManager. 
 
@@ -53,10 +57,14 @@ A lo largo del entrenamiento, se utiliza un conjunto de datos para en cada itera
 Tras haber llevado a cabo el entrenamiento de la red neuronal, hemos decido mostrar dos gráficas mediante las cuales podemos ver el resultado final conseguido. Por un lado se puede observar la gráfica del error.
 Como se puede observar, rápidamente la gráfica converge pasando de más de un 60% de error a entre un 3.5% y 4%. Cabe resaltar el ruido que se observa en el error. Este ruido como ya ha sido comentado anteriormente, viene aparece por el tamaño del batch y la componente estocástica del algoritmos de optimización del backpropagation Adam.
 
-<img width="612" alt="captura de pantalla 2018-11-17 a las 12 49 11" src="https://user-images.githubusercontent.com/15388747/48664477-d1c2d200-ea96-11e8-92aa-31fedb6e629a.png">
+<p align="center">
+    <img width="612" alt="captura de pantalla 2018-11-17 a las 12 49 11" src="https://user-images.githubusercontent.com/15388747/48664477-d1c2d200-ea96-11e8-92aa-31fedb6e629a.png">
+</p>
 
 En cuanto a las predicciones que realiza la red neuronal, mostramos esta segunda gráfica:
 
-<img width="610" alt="captura de pantalla 2018-11-17 a las 12 49 18" src="https://user-images.githubusercontent.com/15388747/48664484-ea32ec80-ea96-11e8-837b-a71c97c19b35.png">
+<p align="center">
+    <img width="610" alt="captura de pantalla 2018-11-17 a las 12 49 18" src="https://user-images.githubusercontent.com/15388747/48664484-ea32ec80-ea96-11e8-837b-a71c97c19b35.png">
+</p>
 
 Tal y como indica la leyenda, la serie naranja son los resultados previstos para la entrada del conjunto de datos de test y la serie azul son las salidas para dicho conjunto ya conocidas. Vemos que los resultados son bastantes buenos ya que la topología de las predicciones es bastante similar a la topología de las salidas ya conocidas.
