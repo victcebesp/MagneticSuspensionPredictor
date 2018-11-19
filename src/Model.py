@@ -2,7 +2,7 @@ from keras.layers import Dense
 from keras.models import Sequential
 from keras.models import load_model
 from keras.models import save_model
-from DatasetManager import prepare_dataset
+from src.DatasetManager import prepare_dataset
 from data_studies.GraphicsGenerator import create_comparison_graphic_with, plot_loss
 
 
