@@ -22,7 +22,7 @@ Tanto para generar la red, como para entrenarla y hacer las predicciones post-en
 
 Conjunto de datos y preprocesado
 El conjunto de datos consiste en unos archivos excel con tres columnas. La primera columna indica el tiempo. La segunda columna indica la intensidad aplicada al electroimán. Por último, la última columna indica la altura a la que se encuentra el imán en suspensión.
-En este problema en concreto, puede darse el caso de que para una misma intensidad, el imán se encuentre suspendido a la misma altura. Es por esto por lo que hemos tenido que realizar ciertas transformaciones al conjunto de datos para inyectarle a la red como conjunto de entrada, no solo la intensidad y la altura en un momento determinado, si no también un histórico de intensidades y alturas. El programa ha sido desarrollado para que pueda elegir el tamaño del intervalo de ese histórico.
+En este problema en concreto, puede darse el caso de que para una misma intensidad, el imán se encuentre suspendido a distinta altura. Es por esto por lo que hemos tenido que realizar ciertas transformaciones al conjunto de datos para inyectarle a la red como conjunto de entrada, no solo la intensidad y la altura en un momento determinado, si no también un histórico de intensidades y alturas. El programa ha sido desarrollado para que pueda elegir el tamaño del intervalo de ese histórico.
 Para aclarar más lo explicado en el párrafo anterior, en caso de que el tamaño del intervalo tenga el valor 5, cada línea del conjunto de datos final quedará de la siguiente manera:
 
 i1-i5 + y1-y5 + y6
